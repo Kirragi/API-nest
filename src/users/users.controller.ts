@@ -29,8 +29,8 @@ export class UsersController {
   @ApiOperation({ summary: "Получение ппользователей" })
   @ApiResponse({ status: 200, type: [User] })
   //   @UseGuards(JwtAuthGuard)
-  @Roles("ADMIN")
-  @UseGuards(RolesGuard)
+ // @Roles("ADMIN")
+  //@UseGuards(RolesGuard)
   @Get()
   getAll() {
     return this.usersService.getAllUser();
@@ -39,8 +39,8 @@ export class UsersController {
   @ApiOperation({ summary: "Выдать роль" })
   @ApiResponse({ status: 200 })
   //   @UseGuards(JwtAuthGuard)
-  @Roles("ADMIN")
-  @UseGuards(RolesGuard)
+ // @Roles("ADMIN")
+ // @UseGuards(RolesGuard)
   @Post("/role")
   addRole(@Body() dto: AddRoleDto) {
     return this.usersService.addRole(dto);
@@ -49,8 +49,8 @@ export class UsersController {
   @ApiOperation({ summary: "Бан ппользователя" })
   @ApiResponse({ status: 200 })
   //   @UseGuards(JwtAuthGuard)
-  @Roles("ADMIN")
-  @UseGuards(RolesGuard)
+ // @Roles("ADMIN")
+ // @UseGuards(RolesGuard)
   @Post("/ban")
   ban(@Body() dto: BanUserDto) {
     return this.usersService.ban(dto);
